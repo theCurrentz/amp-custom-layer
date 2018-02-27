@@ -27,7 +27,7 @@
 
 		<!-- ad slot-->
 			<div class="ampad">
-        <amp-ad  width=336 height=280 type="adsense" data-ad-client="ca-pub-4229549892174356" data-ad-slot="8689355420"> </amp-ad>
+        <amp-ad  width=336 height=280 type="adsense" data-ad-client="<?php get_option('adsenseclient'); ?>" data-ad-slot="<?php get_option('adsenseslot'); ?>"></amp-ad>
       </div>
       <div class="clear"></div>
     <!-- ad slot-->
@@ -188,7 +188,7 @@
 
   <!-- ad slot-->
     <div class="ampad">
-      <amp-ad  width=336 height=280 type="adsense" data-ad-client="ca-pub-4229549892174356" data-ad-slot="8689355420"> </amp-ad>
+      <amp-ad  width=336 height=280 type="adsense" data-ad-client="<?php get_option('adsenseclient'); ?>" data-ad-slot="<?php get_option('adsenseslot'); ?>"></amp-ad>
     </div>
     <div class="clear"></div>
   <!-- ad slot-->

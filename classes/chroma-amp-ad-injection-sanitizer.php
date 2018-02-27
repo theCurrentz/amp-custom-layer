@@ -9,8 +9,8 @@ class Chroma_Amp_Ad_Injection_Sanitizer extends AMP_Base_Sanitizer {
     			'width' => 336,
     			'height' => 280,
     			'type' => 'adsense',
-          'data-ad-client' => 'ca-pub-4229549892174356',
-    			'data-ad-slot' => '8689355420',
+          'data-ad-client' => get_option('adsenseclient'),
+    			'data-ad-slot' => get_option('adsenseslot'),
           'class' => 'ampad'
     		) );
 

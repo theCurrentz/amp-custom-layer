@@ -19,7 +19,7 @@ function amp_custom_layer_menu() {
 function amp_custom_layer_options() {
   //variables for the field
   $option_googleanalytics = 'googleanalytics';
-  $option_adsenseclient = 'adsenseslot';
+  $option_adsenseclient = 'adsenseclient';
   $option_adsenseslot = 'adsenseslot';
   $option_schemaurl = 'schemaurl';
 
