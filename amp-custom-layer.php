@@ -26,7 +26,6 @@ function xyz_amp_set_custom_template( $file, $type, $post ) {
 	return $file;
 }
 
-
 // Add in google analytics support
 if (get_option('googleanalytics'))
 {
