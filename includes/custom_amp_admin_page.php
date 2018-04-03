@@ -22,6 +22,7 @@ function amp_custom_layer_options() {
   $option_adsenseclient = 'adsenseclient';
   $option_adsenseslot = 'adsenseslot';
   $option_schemaurl = 'schemaurl';
+	$option_amp_css = 'amp_css';
 
   //option names
   $hidden_field_name = 'mt_submit_hidden';
@@ -32,6 +33,7 @@ function amp_custom_layer_options() {
   $option_adsenseclient_val = get_option( $option_adsenseclient );
   $option_adsenseslot_val = get_option( $option_adsenseslot );
   $option_schemaurl_val = get_option( $option_schemaurl);
+	$option_amp_css_val = get_option( $option_amp_css);
 
 
   // See if the user has posted us some information
@@ -43,6 +45,7 @@ function amp_custom_layer_options() {
       $option_adsenseclient_val = $_POST[ 'adsenseclient' ];
       $option_adsenseslot_val = $_POST[ 'adsenseslot' ];
       $option_schemaurl_val = $_POST[ 'schemaurl' ];
+			$option_amp_css_val = $_POST[ 'amp_css' ];
   }
 
     // Save the posted value in the database
@@ -50,6 +53,7 @@ function amp_custom_layer_options() {
     update_option( $option_adsenseclient, $option_adsenseclient_val );
     update_option($option_adsenseslot, $option_adsenseslot_val);
     update_option($option_schemaurl, $option_schemaurl_val);
+		update_option($option_amp_css, $option_amp_css_val);
 
     // Put a "settings saved" message on the screen
 ?>
@@ -58,19 +62,49 @@ function amp_custom_layer_options() {
 <div class="wrap">
   <h1>AMP Custom Layer Settings</h1>
     <form name="form1" method="post" action="">
+			<table class="form-table">
         <input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y"/>
-        <label>Google Analytics Pub ID</label>
-        <input type="text" name="googleanalytics" value="<?php echo $option_googleanalytics_val; ?>"/>
-        <br>
-        <label>Google Adsense data-ad-client</label>
-        <input type="text" name="adsenseclient" value="<?php echo $option_adsenseclient_val; ?>"/>
-        <br>
-        <label>Google Adsense data-ad-slot</label>
-        <input type="text" name="adsenseslot" value="<?php echo $option_adsenseslot_val; ?>"/>
-        <br>
-        <label>Schema Data Image URL</label>
-        <input type="text" name="schemaurl" value="<?php echo $option_schemaurl_val; ?>"/>
-        <br>
+				<tr>
+					<td>
+	        	<label>Google Analytics Pub ID</label>
+					</td>
+					<td>
+	        	<input type="text" name="googleanalytics" value="<?php echo $option_googleanalytics_val; ?>"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+        		<label>Google Adsense data-ad-client</label>
+					</td>
+					<td>
+        		<input type="text" name="adsenseclient" value="<?php echo $option_adsenseclient_val; ?>"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+		        <label>Google Adsense data-ad-slot</label>
+					</td>
+					<td>
+	        	<input type="text" name="adsenseslot" value="<?php echo $option_adsenseslot_val; ?>"/>
+					</td>
+        </tr>
+				<tr>
+					<td>
+        		<label>Schema Data Image URL</label>
+					</td>
+					<td>
+        		<input type="text" name="schemaurl" value="<?php echo $option_schemaurl_val; ?>"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>AMP CSS</label>
+					</td>
+					<td>
+						<textarea type="textarea" class="widefat" cols="50" rows="20" wrap="hard" name="amp_css" value="<?php echo stripslashes($option_amp_css_val); ?>"/><?php echo stripslashes($option_amp_css_val); ?></textarea>
+					</td>
+				</tr>
+			</table>
       <div class="submit">
         <input type="submit" name="Submit" class="button-primary" value="<?php esc_attr_e('Save Changes') ?>" />
       </div>
