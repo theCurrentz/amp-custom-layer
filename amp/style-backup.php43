@@ -111,7 +111,7 @@ blockquote p:last-child {
 	display: block;
 }
 .ampad:before {
-    content: 'Article continues after this message';
+    content: 'Advertisement';
     text-align: center;
     color: #a9a9a9;
     font-size: .7rem;
@@ -291,7 +291,7 @@ amp-carousel > amp-img > img {
 }
 
 .amp-wp-iframe-placeholder {
-	background: url( <?php echo esc_url( $this->get( 'placeholder_image_url' ) ); ?> ) no-repeat center 40%;
+	background: #d9d9d9;
 	background-size: 48px 48px;
 	min-height: 48px;
 }

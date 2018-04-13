@@ -10,10 +10,15 @@
 	</style>
 	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+	<script async
+	 custom-element="amp-auto-ads"
+	 src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+</script>
 </head>
 
 <body class="<?php echo esc_attr( $this->get( 'body_class' ) ); ?>">
-<a name="top"></a>
+	<amp-auto-ads type="adsense" data-ad-client="ca-pub-4229549892174356"></amp-auto-ads>
+	<a name="top"></a>
   <?php $this->load_parts( array( 'header-bar' ) ); ?>
 
   <article class="amp-wp-article">
@@ -25,12 +30,13 @@
 
 	<?php $this->load_parts( array( 'featured-image' ) ); ?>
 
-		<!-- ad slot-->
+		<!-- ad slot
 			<div class="ampad">
-        <amp-ad  width=336 height=280 type="adsense" data-ad-client="<?php get_option('adsenseclient'); ?>" data-ad-slot="<?php get_option('adsenseslot'); ?>"></amp-ad>
+        <amp-ad  width=336 height=280 type="adsense" data-ad-client="<?php // get_option('adsenseclient'); ?>" data-ad-slot="<?php // get_option('adsenseslot'); ?>"></amp-ad>
       </div>
       <div class="clear"></div>
-    <!-- ad slot-->
+    ad slot-->
+
 
 <?php	if (get_field('table_of_contents') ) {
 
@@ -78,7 +84,7 @@
 		    <div>
 		      <?php
 		        if(get_field('intro')) {
-		          echo '<p>' . get_field('intro') . '</p>';
+		          echo '<p>' .get_field('intro'). '</p>';
 		        } ?>
 		    </div>
 
@@ -100,7 +106,7 @@
 		                      // display each item as a list - with a class of completed ( if completed )
 		                        if( get_sub_field('step_content')) { ?>
 		                          <li>
-		                          <?php the_sub_field('step_content'); ?>
+		                          	<?php the_sub_field('step_content'); ?>
 		                          </li>
 		                      <?php  } ?>
 		                    <?php } ?>
@@ -186,12 +192,12 @@
 	</div>
 	<?php $this->load_parts( array( 'related-posts' ) ); ?>
 
-  <!-- ad slot-->
+  <!-- ad slot
     <div class="ampad">
-      <amp-ad  width=336 height=280 type="adsense" data-ad-client="<?php get_option('adsenseclient'); ?>" data-ad-slot="<?php get_option('adsenseslot'); ?>"></amp-ad>
+      <amp-ad  width=336 height=280 type="adsense" data-ad-client="<?php // get_option('adsenseclient'); ?>" data-ad-slot="<?php // get_option('adsenseslot'); ?>"></amp-ad>
     </div>
     <div class="clear"></div>
-  <!-- ad slot-->
+  ad slot -->
 
 	<!-- <footer class="amp-wp-article-footer">
 		<?php //$this->load_parts( apply_filters( 'amp_post_article_footer_meta', array( 'meta-taxonomy', 'meta-comments-link' ) ) ); ?>

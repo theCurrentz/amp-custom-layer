@@ -101,7 +101,7 @@ function amp_custom_layer_options() {
 						<label>AMP CSS</label>
 					</td>
 					<td>
-						<textarea type="textarea" class="widefat" cols="50" rows="20" wrap="hard" name="amp_css" value="<?php echo stripslashes($option_amp_css_val); ?>"/><?php echo stripslashes($option_amp_css_val); ?></textarea>
+						<textarea type="textarea" class="widefat" cols="50" rows="20" wrap="hard" name="amp_css" value="<?php echo htmlentities(stripslashes($option_amp_css_val)); ?>"/><?php echo htmlentities(stripslashes($option_amp_css_val)); ?></textarea>
 					</td>
 				</tr>
 			</table>
