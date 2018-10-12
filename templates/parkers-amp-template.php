@@ -17,6 +17,11 @@
 </head>
 
 <body class="<?php echo esc_attr( $this->get( 'body_class' ) ); ?>">
+  <?php
+    if (get_option('google_tag_manager')) {
+      echo get_option('google_tag_manager');
+    }
+  ?>
 	<amp-auto-ads type="adsense" data-ad-client="ca-pub-4229549892174356"></amp-auto-ads>
 	<a name="top"></a>
   <?php $this->load_parts( array( 'header-bar' ) ); ?>

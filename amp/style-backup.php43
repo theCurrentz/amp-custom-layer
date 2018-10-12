@@ -22,7 +22,7 @@ html {
 
 body {
   color: #444;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell, Helvetica Neue, sans-serif;
 	font-weight: 300;
 	line-height: 1.75em;
 }
@@ -91,7 +91,7 @@ blockquote p:last-child {
 	border-bottom: 2px solid #eee;
 }
 .amp-wp-header a {
-	background: url(https://cdn.idropnews.com/wp-content/uploads/2017/06/13133217/idroplogo.png);
+	background: url('https://cdn.idropnews.com/wp-content/uploads/2017/06/13133217/idroplogo.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
@@ -234,13 +234,13 @@ blockquote p:last-child {
 /* Featured image */
 
 .amp-wp-article-featured-image {
-	margin: 0 0 1em;
+	margin: 0px 0px 1em;
 }
 .amp-wp-article-featured-image amp-img {
-	margin: 0 auto;
+	margin: 0px auto;
 }
 .amp-wp-article-featured-image.wp-caption .wp-caption-text {
-	margin: 0 18px;
+	margin: 0px 18px;
 }
 
 /* Article Content */
@@ -361,19 +361,19 @@ amp-carousel > amp-img > img {
 .social-share {
 	border-radius: 4px;
 }
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
  background-color: #4831ff;
  background-position: 10px center;
  background-size: 24px auto;
  position: relative;
 }
-amp-social-share[type="facebook"] {
+amp-social-share[type='facebook'] {
   background-color: #007aff;
 	background-position: 10px center;
 	background-size: 28px auto;
 	position: relative;
 }
-amp-social-share[type="facebook"]:before {
+amp-social-share[type='facebook']:before {
 	content: 'Share';
 	position: absolute;
 	font-size: 1rem;
@@ -385,7 +385,7 @@ amp-social-share[type="facebook"]:before {
 	width: 44px;
 	z-index: 10;
 }
-amp-social-share[type="twitter"]:before {
+amp-social-share[type='twitter']:before {
 	content: 'Tweet';
 	position: absolute;
   font-size: 1rem;

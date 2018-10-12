@@ -23,10 +23,10 @@ function amp_custom_layer_options() {
   $option_adsenseslot = 'adsenseslot';
   $option_schemaurl = 'schemaurl';
 	$option_amp_css = 'amp_css';
+  $option_gtm = 'google_analytics_code';
 
   //option names
   $hidden_field_name = 'mt_submit_hidden';
-
 
   // Read in existing option value from database
   $option_googleanalytics_val = get_option( $option_googleanalytics );
@@ -34,18 +34,18 @@ function amp_custom_layer_options() {
   $option_adsenseslot_val = get_option( $option_adsenseslot );
   $option_schemaurl_val = get_option( $option_schemaurl);
 	$option_amp_css_val = get_option( $option_amp_css);
-
+  $option_gtm_val = get_option($option_gtm);
 
   // See if the user has posted us some information
   // If they did, this hidden field will be set to 'Y'
-  if( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' )
-  {
+  if ( isset($_POST[ $hidden_field_name ]) && $_POST[ $hidden_field_name ] == 'Y' ) {
       // Read their posted value
       $option_googleanalytics_val =  $_POST[ 'googleanalytics' ];
       $option_adsenseclient_val = $_POST[ 'adsenseclient' ];
       $option_adsenseslot_val = $_POST[ 'adsenseslot' ];
       $option_schemaurl_val = $_POST[ 'schemaurl' ];
 			$option_amp_css_val = $_POST[ 'amp_css' ];
+      $option_gtm_val = $_POST[ 'gtm' ];
   }
 
     // Save the posted value in the database
@@ -54,6 +54,7 @@ function amp_custom_layer_options() {
     update_option($option_adsenseslot, $option_adsenseslot_val);
     update_option($option_schemaurl, $option_schemaurl_val);
 		update_option($option_amp_css, $option_amp_css_val);
+    update_option($option_gtm, $option_gtm_val);
 
     // Put a "settings saved" message on the screen
 ?>
@@ -72,6 +73,14 @@ function amp_custom_layer_options() {
 	        	<input type="text" name="googleanalytics" value="<?php echo $option_googleanalytics_val; ?>"/>
 					</td>
 				</tr>
+        <tr>
+          <td>
+            <label>Google Tag Manager Configuration Object</label>
+          </td>
+          <td>
+            <textarea type="textarea" class="widefat" cols="50" rows="2" wrap="hard" name="gtm" value="<?php echo htmlentities(stripslashes($option_gtm_val)); ?>"/><?php echo htmlentities(stripslashes($option_gtm_val)); ?></textarea>
+          </td>
+        </tr>
 				<tr>
 					<td>
         		<label>Google Adsense data-ad-client</label>

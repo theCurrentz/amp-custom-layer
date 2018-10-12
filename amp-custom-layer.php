@@ -26,8 +26,7 @@ function chroma_amp_set_custom_template( $file, $type, $post ) {
 }
 
 // Add in google analytics support
-if (get_option('googleanalytics'))
-{
+if (get_option('googleanalytics')) {
   add_filter( 'amp_post_template_analytics', 'chroma_amp_add_custom_analytics' );
   function chroma_amp_add_custom_analytics( $analytics ) {
   	if ( ! is_array( $analytics ) ) {
